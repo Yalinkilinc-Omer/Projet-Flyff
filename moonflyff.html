@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3490DC">
+    <meta name="author" content="Azuriom">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Accueil">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moonflyff.fr">
+    <meta property="og:image" content="https://moonflyff.fr/assets/img/azuriom.png">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="MoonFlyff">
+
+<!-- CSRF Token -->
+    <meta name="csrf-token" content="LxGrAgeWAGD4ss3QiOfuLGMvRTFGNYAP8doJfVDI">
+
+    <title>Accueil | MoonFlyff</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://moonflyff.fr/assets/img/azuriom.png">
+
+    <!-- Scripts -->
+    <script src="https://moonflyff.fr/assets/vendor/jquery/jquery.min.js" defer></script>
+    <script src="https://moonflyff.fr/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://moonflyff.fr/assets/vendor/axios/axios.min.js" defer></script>
+    <script src="https://moonflyff.fr/assets/themes/sun/js/css-vars-ponyfill.min.js" defer></script>
+
+
+            <script src="https://moonflyff.fr/assets/js/script.js" defer></script>
+        <script src="https://moonflyff.fr/assets/themes/sun/js/app.js" defer></script>
+    
+<!-- Page level scripts -->
+    
+<!-- Fonts -->
+    <link href="https://moonflyff.fr/assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="https://moonflyff.fr/assets/themes/sun/css/styles.css" rel="stylesheet">
+
+    </head>
+
+<body>
+<div id="app">
+            <header class="sun-header-background">
+            <div class="container d-flex flex-wrap flex-md-nowrap flex-row align-items-end">
+    <div class="row">
+        <div class="col-xl-12">
+            <nav class="navbar navbar-expand-md flex-md-column sun-header">
+    <a class="sun-header-brand" href="/">
+        <div class="background-brand text-center py-2">
+            <img src="https://moonflyff.fr/storage/img/logo.png" alt="" style="max-width: 212px">
+        </div>
+    </a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-wrap">
+                                                <li class="nav-item active">
+                        <a class="nav-link text-uppercase  active "
+                           href="https://moonflyff.fr" >Accueil</a>
+                    </li>
+                                                                <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#"
+                           role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Classement
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item "
+                                    href="https://moonflyff.fr/flyff/characters">Personnages</a>
+                                                            <a class="dropdown-item "
+                                    href="https://moonflyff.fr/flyff/guilds">Guildes</a>
+                                                            <a class="dropdown-item "
+                                    href="https://moonflyff.fr/flyff/guild-siege">GS</a>
+                                                            <a class="dropdown-item "
+                                    href="https://moonflyff.fr/flyff/success">Succès</a>
+                                                    </div>
+                    </li>
+                                                                <li class="nav-item active">
+                        <a class="nav-link text-uppercase "
+                           href="https://moonflyff.fr/shop" >Boutique</a>
+                    </li>
+                                                                <li class="nav-item active">
+                        <a class="nav-link text-uppercase "
+                           href="https://moonflyff.fr/faq" >FAQ</a>
+                    </li>
+                                                                <li class="nav-item active">
+                        <a class="nav-link text-uppercase "
+                           href="https://moonflyff.fr/support/tickets" >Support</a>
+                    </li>
+                                                                <li class="nav-item active">
+                        <a class="nav-link text-uppercase "
+                           href="https://moonflyff.fr/wiki" >Wiki</a>
+                    </li>
+                                        
+                    </ul>
+    </div>
+</nav>
+        </div>
+    </div>
+    <div class="row flex-md-grow-1 flex-md-shrink-1 justify-content-center sun-header-content">
+        <div class="col-xl-12 col-sm-5">
+            <div class="sun-login">
+                <div class="row justify-content-end">
+
+                    <div class="col-xl-4 box--download box d-none d-xl-block">
+    <div class="box--overlay">
+        <div class="box--overlay-image">
+            <img class="img-responsive" src="https://moonflyff.fr/assets/themes/sun/image/header/layer-download.jpg" title="Download">
+        </div>
+        <div class="text-center">
+            <a class="text-white text-decoration-none align-middle" href="/download">
+                <span>Lancer le jeu</span>
+                ou télécharger le jeu</a>
+        </div>
+    </div>
+</div>
+
+                    <div class="col-xl-4 box--login box">
+    <div class="box--overlay">
+        <div class="box--overlay-image">
+            <img class="img-responsive" src="https://moonflyff.fr/assets/themes/sun/image/header/layer-login.jpg" title="Login">
+        </div>
+        <div class="text-center">
+                            <form method="POST" action="https://moonflyff.fr/user/login">
+                    <input type="hidden" name="_token" value="LxGrAgeWAGD4ss3QiOfuLGMvRTFGNYAP8doJfVDI">                    <div class="form-group">
+                        <input id="email" type="text" class="form-control mb-1 "
+                               name="email"
+                               value="" required autocomplete="email">
+                        <input id="password" type="password"
+                               class="form-control "
+                               name="password" required autocomplete="current-password">
+                    </div>
+                    <button class="btn btn-primary sun-login-btn" type="submit">
+                        Connexion
+                    </button>
+
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" name="remember" id="remember"
+                                >
+
+                            <label class="custom-control-label" for="remember">
+                                Se souvenir de moi
+                            </label>
+                        </div>
+                                                    <a href="https://moonflyff.fr/user/password/reset">
+                                Mot de passe oublié ?
+                            </a>
+                                            </div>
+                </form>
+                    </div>
+    </div>
+</div>
+
+                    <div class="col-xl-4 box box--wiki">
+    <div class="box--overlay">
+        <div class="box--overlay-image">
+            <img class="img-responsive" src="https://moonflyff.fr/assets/themes/sun/image/header/Illust_MistBoy.png" title="Mist Boy">
+        </div>
+        <div class="text-right">
+                            <a class="text-white ml-auto mr-5 text-decoration-none"
+                   href="https://moonflyff.fr/user/register">INSCRIPTION</a>
+            
+        </div>
+    </div>
+    <div class="box--overlay">
+        <div class="box--overlay-image">
+            <img class="img-responsive" src="https://moonflyff.fr/assets/themes/sun/image/header/illust_sword.png" title="Wiki">
+        </div>
+        <div class="text-right">
+            <a class="text-white ml-auto mr-5 text-decoration-none" href="/shop">BOUTIQUE</a>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            <div class="sun-social">
+                <div class="row justify-content-end">
+                    <div class="col-xl-4 box sun-social-discord">
+                                                                                                                                                                                                                                                <a href="https://discord.gg/NswA4vv" class="text-white">
+                                    <img src="https://moonflyff.fr/assets/themes/sun/image/header/layer-discord.png"
+                                         title="MoonFlyff ON DISCORD">
+                                    <span class="text-uppercase">MoonFlyff DISCORD</span>
+                                </a>
+                                                                        </div>
+                    <div class="col-xl-4 box sun-social-vote">
+                        <a href="/vote" class="text-white">
+                            <img src="https://moonflyff.fr/assets/themes/sun/image/header/layer-star.svg" title="VOTE FOR SUN FLYFF">
+                            <span class="text-uppercase">VOTE POUR MoonFlyff </span>
+                        </a>
+                    </div>
+                    <div class="col-xl-4 box text-white sun-social-links">
+                        <div class="d-flex align-items-center">
+                                                                                                <a href="https://discord.gg/NswA4vv">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                                                                                                                <a href="https://discord.gg/NswA4vv">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                                                                                                                <a href="https://www.youtube.com/channel/UCd_lMrj7fx-iY_DAAspCLnQ">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                                                                                                                                </div>
+                        <span>
+                            RÉSEAU SOCIAUX
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </header>
+    
+
+    <main>
+        <div class="container">
+            <div id="status-message"></div>
+        </div>
+        <div class="container">
+                            <div class="row my-3">
+    <div class="col-12">
+        <div class="row my-3" id="information">
+            <div class="col-xl-4 col-md-3 d-none d-md-block">
+                <img src="https://moonflyff.fr/assets/themes/sun/image/news.png" class="card-img" alt="...">
+            </div>
+            <div class="col-xl-8 col-md-9">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab"
+                                   aria-controls="nav-home" aria-selected="true">TOUS</a>
+                                <a class="nav-link" id="nav-notice-tab" data-toggle="tab" href="#nav-notice" role="tab"
+                                   aria-controls="nav-notice" aria-selected="false">NOTICE</a>
+                                <a class="nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab"
+                                   aria-controls="nav-event" aria-selected="false">ÉVENEMENT</a>
+                                <a class="nav-link" id="nav-update-tab" data-toggle="tab" href="#nav-update" role="tab"
+                                   aria-controls="nav-update" aria-selected="false">MISE A JOUR</a>
+                                <a class="nav-link" id="nav-maintenance-tab" data-toggle="tab" href="#nav-maintenance"
+                                   role="tab" aria-controls="nav-maintenance" aria-selected="false">MAINTENANCE</a>
+                            </div>
+                        </nav>
+                    </h5>
+                                        <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-all" role="tabpanel"
+                             aria-labelledby="nav-all-tab">
+                            <ul>
+                                                                    <li>
+                                        <a href="https://moonflyff.fr/news/update-01"
+                                           class="link-unstyled text-dark">
+                                            <span class="sun-update">[UPDATE]</span> Mise à jour 22/10/2021
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://moonflyff.fr/news/ouverture"
+                                           class="link-unstyled text-dark">
+                                            <span class="sun-notice">[NOTICE]</span> Ouverture de MoonFlyff !
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="nav-notice" role="tabpanel" aria-labelledby="nav-notice-tab">
+                            <ul>
+                                                                    <li>
+                                        <span class="sun-notice">[NOTICE]</span> Ouverture de MoonFlyff !
+                                    </li>
+                                                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="nav-event" role="tabpanel" aria-labelledby="nav-event-tab">
+                            <ul>
+                                                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="nav-update" role="tabpanel" aria-labelledby="nav-update-tab">
+                            <ul>
+                                                                    <li>
+                                        <span class="sun-update">[UPDATE]</span> Mise à jour 22/10/2021
+                                    </li>
+                                                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="nav-maintenance" role="tabpanel"
+                             aria-labelledby="nav-maintenance-tab">
+                            <ul>
+                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+            
+            <div class="row mt-3">
+
+                                    <div class="col-xl-3 col-lg-4 col-md-5">
+                        <div class="sticky-top">
+    <div class="box--multiple box--gradient-orange" style="padding-left: 15px">
+        <img src="https://moonflyff.fr/assets/themes/sun/image/box/layer-play.jpg" alt="">
+        <h4 class="text-uppercase">MoonFlyff
+            <span>Trailer Vidéo</span>
+        </h4>
+        <a class="btn btn-light" target="_blank" href="https://www.youtube.com/watch?v=wmVciE8m6_g">Jouer <i class="fas fa-caret-right"></i></a>
+    </div>
+    <div class="mt-3 box--multiple box--gradient-blue" style="padding-left: 15px">
+        <img src="https://moonflyff.fr/assets/themes/sun/image/box/layer-gallery.jpg" alt="">
+        <h4 class="text-uppercase">MoonFlyff
+            <span>Fan-arts et capture d&#039;écran</span>
+        </h4>
+        <a class="btn btn-light" href="#">GALLERIE <i class="fas fa-search"></i></a>
+    </div>
+    <div class="card mt-3" id="server--statue">
+        <div class="card-header">
+            ETAT DU SERVEUR
+                            <span class="btn btn-danger">OFF</span>
+                    </div>
+        <nav class="mt-2">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="nav-player-tab" data-toggle="tab" href="#nav-player" role="tab"
+                   aria-controls="nav-player" aria-selected="true">Joueurs</a>
+                <a class="nav-link" id="nav-server-tab" data-toggle="tab" href="#nav-server" role="tab"
+                   aria-controls="nav-server" aria-selected="false">rate du serveur</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-player" role="tabpanel" aria-labelledby="nav-player-tab">
+                <ul class="my-2">
+                                            <li class="my-3">Le server est hors ligne.</li>
+                                    </ul>
+            </div>
+            <div class="tab-pane fade" id="nav-server" role="tabpanel" aria-labelledby="nav-server-tab">
+                <ul>
+                    <li class="mb-1 mt-3">Exp:</li>
+                    <li class="my-1">Drop:</li>
+                    <li class="mb-3 mt-1">Penyas:</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                
+                <div
+                    class="
+                                                            col-xl-6 col-lg-8 col-md-7 mt-3 mt-lg-0
+                                                                "
+                >
+                        <div class="row">
+                                    <div class="col-xl-12 mb-3">
+                    <div id="carouselHomepageIndicators" class="carousel slide carousel--homepage bg-white"
+                         data-ride="carousel">
+                        <div class="carousel--homepage-controle row no-gutters">
+                            <ol class="carousel-indicators col-9">
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="0"
+                                        class="active">Chanoine</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="1"
+                                        class="">Primat</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="2"
+                                        class="">Templier</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="3"
+                                        class="">Spadassin</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="4"
+                                        class="">Arcaniste</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="5"
+                                        class="">Envoûteur</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="6"
+                                        class="">Sylphide</li>
+                                                                    <li data-target="#carouselHomepageIndicators" data-slide-to="7"
+                                        class="">Arbalétrier</li>
+                                                            </ol>
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <a class="carousel-control-prev" href="#carouselHomepageIndicators" role="button"
+                                   data-slide="prev">
+                                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselHomepageIndicators" role="button"
+                                   data-slide="next">
+                                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-inner" role="listbox">
+                                                            <div class="carousel-item active">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Chanoine</h4>
+                                            <p>Le Chanoine a appris de ses combats passés. Dans sa quête de la source du pouvoir humain, il a donc naturellement développé de nouvelles techniques. Il utilise donc son savoir pour augmenter les dégâts effectués par les membres de son groupe pendant les batailles.</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/chanoine.png"
+                                                 alt="Chanoine">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Primat</h4>
+                                            <p>Le Primat est le meilleur soutien de groupe de Madrigal, ses buffs sont recherchés par tous les aventuriers dignes de ce noms. De plus leur nouvelle technique, dernier recours, augmente leurs chances de remporter leurs affrontements. N’hésitez plus et apportez paix et sagesse en Madrigal.</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/primat.png"
+                                                 alt="Primat">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Templier</h4>
+                                            <p>Les Templiers sont les parangons de vertu de Madrigal. Ils ont prêté serment de protéger les faibles de tous les perils du monde. Leurs armures lourdes leur permettent d’encaisser d’incroyables quantités de dégâts sans broncher. Là où d’autres aventuriers cèdent ou reculent, les Templiers tiennent leurs positions. Partout où apparaissent les pavois polis des Templiers, les ténèbres vacillent.</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/templier.png"
+                                                 alt="Templier">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Spadassin</h4>
+                                            <p>Les Spadassins sont de véritables maîtres assassins. Ils ont perfectionné l’art de tuer bêtes et hommes à son paroxysme. Si vous avez besoin d’éliminer rapidement un ennemi, ne cherchez pas plus loin, le Spadassin est l’allié que vous cherchez. Bien que leurs motivations laissent parfois dubitatifs, personne n’ose jamais critiquer les choix des Spadassins par peur de s’attirer leurs foudres.</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/spadassin.png"
+                                                 alt="Spadassin">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Arcaniste</h4>
+                                            <p>L’Arcaniste est l’étudiant le plus enthousiaste de tout Madrigal. Son credo c’est « la connaissance c’est le pouvoir ». Il sera d’ailleurs presque impossible à ses adversaires de rester éveillés tout en écoutant l’arcaniste étaler sa culture. La connaissance est décidément assommante!</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/arcaniste.png"
+                                                 alt="Arcaniste">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Envoûteur</h4>
+                                            <p>L’envoûteur manipule des énergies sombres. Manipuler traîtreusement les esprits de ses adversaires pour les démoraliser et les affaiblir l’amuse presque autant que la victoire en elle-même. Choisissez l’envoûteur si vous n’aimez pas suivre les règles du jeu !</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/envouteur.png"
+                                                 alt="Envoûteur">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Sylphide</h4>
+                                            <p>Le Sylphide n’a pas de rival dans tout Madrigal pour ce qui est de faire des pirouettes. Il frappe vite et fort. Ses coups sont d’une précision diabolique. Même dans son dos, ses ennemis ne sont pas en sécurité. Préparez-vous à être dans le vent !</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/sylphide.png"
+                                                 alt="Sylphide">
+                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item ">
+                                    <div class="row no-gutters align-items-end">
+                                        <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                            <h4>Arbalétrier</h4>
+                                            <p>En choisissant l&#039;Arbalétrier, vous deviendrez l&#039;archer de votre groupe, vos sorts vous offriront une grande survivabilité en vous permettant de disparaître quand la situation devient trop extrême, votre arc vous permettra d&#039;infliger de lourds dommages de loin.</p>
+                                            <span class="mb-4">
+                                                                                                                                                            <i class="fas fa-star active"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                                </span>
+
+                                        </div>
+                                        <div class="col-lg-6 text-left">
+                                            <img class="d-block img-fluid object-contain"
+                                                 src="https://moonflyff.fr/storage/img/arbaletrier.png"
+                                                 alt="Arbalétrier">
+                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+                            <div class="col-xl-12 mt-3 mx-xl-0">
+            <div class="card card-body border-0 home--ranking">
+                <h6 class="card-title"><img src="https://moonflyff.fr/assets/themes/sun/image/ranking.png"
+                                            alt="">Classement</h6>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-player-ranking-tab" data-toggle="tab"
+                           href="#nav-player-ranking"
+                           role="tab" aria-controls="nav-player-ranking"
+                           aria-selected="true">Joueurs</a>
+                        <a class="nav-link" id="nav-guild-ranking-tab" data-toggle="tab" href="#nav-guild-ranking"
+                           role="tab"
+                           aria-controls="nav-guild-ranking"
+                           aria-selected="false">Guildes</a>
+                        <a class="nav-link" id="nav-guild-siege-tab" data-toggle="tab" href="#nav-guild-siege"
+                           role="tab"
+                           aria-controls="nav-guild-siege"
+                           aria-selected="false">Siège de guildes</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-player-ranking" role="tabpanel"
+                         aria-labelledby="nav-player-ranking-tab">
+                                                <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                                                    <tr class=" one ">
+                                        <td><img style=" width:32px" src="/storage/flyff/avatars/1/Kishin.png"
+                                                 alt=""> Kishin
+                                        </td>
+                                        <td><img src="https://moonflyff.fr/assets/plugins/flyff/img/sex_icons/0.png" alt=""></td>
+                                        <td><img src="https://moonflyff.fr/assets/plugins/flyff/img/jobs/33.png" alt=""></td>
+                                        <td>Spadassin</td>
+                                        <td><span
+                                                class="text-muted">Niveau: </span>220
+                                        </td>
+                                        <td><span
+                                                class="text-muted">Guilde: </span>MoonFlyff
+                                        </td>
+                                    </tr>
+                                                                    <tr class=" two ">
+                                        <td><img style=" width:32px" src="/storage/flyff/avatars/1/Test.png"
+                                                 alt=""> Test
+                                        </td>
+                                        <td><img src="https://moonflyff.fr/assets/plugins/flyff/img/sex_icons/1.png" alt=""></td>
+                                        <td><img src="https://moonflyff.fr/assets/plugins/flyff/img/jobs/1.png" alt=""></td>
+                                        <td>Mercenaire</td>
+                                        <td><span
+                                                class="text-muted">Niveau: </span>28
+                                        </td>
+                                        <td><span
+                                                class="text-muted">Guilde: </span>
+                                        </td>
+                                    </tr>
+                                                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-guild-ranking" role="tabpanel"
+                         aria-labelledby="nav-guild-ranking-tab">
+                                                <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                                                    <tr class=" text-warning ">
+                                        <td><img style="width:32px" src="https://moonflyff.fr/assets/plugins/flyff/img/guild/icons/unknown.png" alt=""> MoonFlyff
+                                        </td>
+                                        <td><span
+                                                class="text-muted">Chef: </span>Kishin
+                                        </td>
+                                        <td><span class="text-muted">Win: </span>0</td>
+                                        <td><span class="text-muted">Lose: </span>0</td>
+                                        <td><span
+                                                class="text-muted">Membres: </span>1
+                                            / 30</td>
+                                    </tr>
+                                                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-guild-siege" role="tabpanel"
+                         aria-labelledby="nav-guild-siege-tab">
+                                                <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+                </div>
+
+                                                                                        <div class="col-xl-3 mt-3 mt-xl-0">
+                                <div class="sticky-top home--forum">
+    <h6><i class="fas fa-comments"></i>Forum <span>Derniers messages</span></h6>
+    <ul class="list-unstyled">
+                    <li class="media">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">VIDE</h5>
+                    Aucun messages récents
+                </div>
+            </li>
+                    </ul>
+</div>
+                            </div>
+                                                                        </div>
+        </div>
+    </main>
+</div>
+<div class="container">
+    <div class="row copyright">
+        <div class="col-12 w-100 text-center py-3">
+            Copyright © 2021 Azuriom - Tous droits réservés. | Propulsé par <a href="https://azuriom.com" target="_blank" rel="noopener noreferrer">Azuriom</a>.        </div>
+    </div>
+</div>
+
+    <footer class="app--footer text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="app--footer-contact">
+                        <a class="mr-2" href="/locale/en"><img src="https://moonflyff.fr/assets/img/locales/en.png" alt=""></a>
+                        <a class="mr-2" href="/locale/fr"><img src="https://moonflyff.fr/assets/img/locales/fr.png" alt=""></a>
+                        <h3 class="py-lg-3 py-2">Contact</h3>
+                        <span class="py-lg-3 py-2"><a href="mailto:contact@moonflyff.fr">contact@moonflyff.fr</a></span>
+                        <div class="d-flex align-items-center py-lg-3 py-2">
+                                                            <a href="https://discord.gg/NswA4vv" class="app--footer-contact-facebook btn btn-primary">
+                                    Facebook
+                                </a>
+                                                            <a href="https://discord.gg/NswA4vv" class="app--footer-contact-twitter btn btn-primary">
+                                    Twitter
+                                </a>
+                                                            <a href="https://www.youtube.com/channel/UCd_lMrj7fx-iY_DAAspCLnQ" class="app--footer-contact-youtube btn btn-primary">
+                                    Youtube
+                                </a>
+                                                            <a href="https://discord.gg/NswA4vv" class="app--footer-contact-discord btn btn-primary">
+                                    Discord
+                                </a>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 app--footer-navigation py-5">
+                    <h6 class="py-lg-0 py-2"><img src="https://moonflyff.fr/storage/img/logo.png" alt="" style="max-width: 212px"></h6>
+                    <div class="app--footer-navigation-box py-lg-0 py-2">
+                        <h3>Navigation</h3>
+                        <ul class="nav">
+                                                                                        <li class="nav-item active">
+                                    <a class="nav-link text-uppercase  active "
+                                       href="https://moonflyff.fr" >Accueil</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/shop" >Boutique</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/faq" >FAQ</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/flyff/guilds" >Guildes</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="#" >Classement</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/flyff/characters" >Personnages</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/support/tickets" >Support</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/wiki" >Wiki</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/flyff/guild-siege" >GS</a>
+                                </li>
+                                                            <li class="nav-item active">
+                                    <a class="nav-link text-uppercase "
+                                       href="https://moonflyff.fr/flyff/success" >Succès</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="col-12 app--footer-navigation">
+                    <ul class="nav pb-4 justify-content-center w-100">
+                        <li class="nav">
+                                                                                        <a class="nav-link text-uppercase" href="/cgu"
+                                   title="Condition général d&#039;utilisation" target="_blank">
+                                    CGU
+                                </a>
+                                                                                        <a class="nav-link text-uppercase" href="/cgv" target="_blank"
+                                   title="Condition général de vente">
+                                    CGV
+                                </a>
+                                                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="app--footer-icon"></div>
+
+
+</body>
+</html>

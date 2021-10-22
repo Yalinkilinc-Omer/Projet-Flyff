@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Titan Flyff</title>
+<link rel="shortcut icon" href="./titan_assets/images/favicon.ico" type="titan_asets/image/x-icon">
+
+<script src="./titan_assets/js/jquery.min.js"></script>
+<link rel="stylesheet" href="titan_assets/css/snackbar.min.css">
+<link href="titan_assets/css/material.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="titan_assets/images/favicon.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="titan_assets/js/snackbar.min.js"></script>
+<script src="titan_assets/js/custom.js" type="text/javascript"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<link rel="stylesheet" href="titan_assets/css/bootstrap.css">
+<link rel="stylesheet" href="titan_assets/fonts/icon-font/css/style.css">
+<link rel="stylesheet" href="titan_assets/fonts/typography-font/typo.css">
+<link rel="stylesheet" href="titan_assets/fonts/fontawesome-5/css/all.css">
+
+<link rel="stylesheet" href="titan_assets/plugins/aos/aos.min.css">
+<link rel="stylesheet" href="titan_assets/plugins/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="titan_assets/plugins/nice-select/nice-select.min.css">
+<link rel="stylesheet" href="titan_assets/plugins/slick/slick.min.css">
+<link rel="stylesheet" href="titan_assets/plugins/date-picker/css/gijgo.min.css" type="text/css" />
+
+<link rel="stylesheet" href="titan_assets/css/main.css">
+<link rel="stylesheet" href="titan_assets/css/custom.css">
+<link rel="stylesheet" href="titan_assets/css/theme-mode-custom.css">
+
+
+</head>
+<body data-theme="dark">
+<div class="site-wrapper overflow-hidden">
+
+<header class="site-header site-header--menu-left dark-mode-texts site-header--absolute" style="position: fixed;">
+<div class="container-fluid pr-lg--30 pl-lg--30">
+<nav class="navbar site-navbar offcanvas-active navbar-expand-lg  px-0">
+
+<div class="collapse navbar-collapse" id="mobile-menu4">
+<div class="navbar-nav-wrapper">
+<ul class="navbar-nav main-menu">
+<li class="nav-item">
+<a class="nav-link" href="/" role="button" aria-expanded="false">Accueil</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="register" role="button" aria-expanded="false">Inscription</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="downloads" role="button" aria-expanded="false">Télécharger</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="vote" role="button" aria-expanded="false">Vote</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="donate" role="button" aria-expanded="false">Donation</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discord.gg/MypHsfTyuD" target="_blank" role="button" aria-expanded="false">Discord</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="boutique" role="button" aria-expanded="false">Boutique</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle gr-toggle-arrow" id="navbarDropdown" href="#features" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classement <i class="icon icon-small-down"></i></a>
+<ul class="gr-menu-dropdown dropdown-menu" aria-labelledby="navbarDropdown">
+<li class="drop-menu-item">
+<a href="rankings">
+Personnages
+</a>
+</li>
+<li class="drop-menu-item">
+<a href="guildranking">
+Guildes
+</a>
+</li>
+<li class="drop-menu-item">
+<a href="guildwar-rankings">
+Guildes siege
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<button class="d-block d-lg-none offcanvas-btn-close" type="button" data-toggle="collapse" data-target="#mobile-menu4" aria-controls="mobile-menu4" aria-expanded="true" aria-label="Toggle navigation">
+<i class="gr-cross-icon"></i>
+</button>
+</div>
+<div class="header-btn mr-6 mr-lg-0 d-none d-xs-block">
+<a style="font-size: 24px; min-height: 100%; vertical-align: middle;" title="Connexion" href="login"><i class="fas fa-fingerprint hoverBrightness"></i></a>
+</div>
+
+<button class="navbar-toggler btn-close-off-canvas  hamburger-icon border-0" type="button" data-toggle="collapse" data-target="#mobile-menu4" aria-controls="mobile-menu4" aria-expanded="false" aria-label="Toggle navigation">
+
+<div class="hamburger hamburger--squeeze js-hamburger">
+<div class="hamburger-box">
+<div class="hamburger-inner"></div>
+</div>
+</div>
+</button>
+
+</nav>
+</div>
+</header>
+<div class="home-background co-working bg-image background-overlay" style="background-image:url(titan_assets/image/header.png);">
+<div class="container">
+<div class="row justify-content-center py-25">
+<div class="col-lg-6">
+<div class="main-block">
+<div class="form-title text-center">
+<h2 class="title gr-text-2 mb-9">Inscription</h2>
+<p class="gr-text-8 mb-13">Créez votre compte.</p>
+</div>
+<div class="bg-titan rounded-10 ">
+<form class="registerForm login-form rounded-10 px-8 py-8 shadow-1 mb-11" method="post">
+<div class="hgap-xs vgap-sm align-items-center">
+<div class="form-group" data-sr-item="sign">
+<span class="gr-text-11 font-weight-bold text-white">E-mail</span>
+<input class="form-control" type="email" id="email" name="email" placeholder="Email">
+</div>
+<div class="form-group" data-sr-item="sign">
+<span class="gr-text-11 font-weight-bold text-white">Mot de passe</span>
+<input id="password" class="form-control" type="password" name="password" placeholder="********">
+</div>
+<div class="form-group" data-sr-item="sign">
+<span class="gr-text-11 font-weight-bold text-white">Vérifiez votre mot de passe</span>
+<input id="rpassword" class="form-control" type="password" name="rpassword" placeholder="********">
+</div>
+<div class="form-group mb-7" data-sr-item="sign">
+<div class="custom-control custom-checkbox">
+<input style="color: #FFF;" class="custom-control-input" type="checkbox" id="agree" name="agree"><label style="color: #FFF;" class="custom-control-label" for="agree"> J'accepte les <a style="color: #2012e6;" href="tos" target="_blank"> Conditions d'utilisation</a> </label>
+</div>
+</div>
+<div class="form-group button-block mb-2" data-sr-item="sign">
+<button style=" width: 100%;" class="g-recaptcha RegisterButton button_submit form-btn form-btn btn btn-primary gr-hover-y w-100" data-sitekey="6LesvDEcAAAAAC2y73vuHr-2WIA4q662EbkPwWLt" data-callback='onSubmitRegistration'>Enregistrez votre compte
+</button>
+</div>
+<br />
+<div data-sr-item="sign" style="color: #FFF; margin: 0 auto; text-align: center; margin-top: 5px;"> Vous avez déjà un compte ? <a href="login" style="color: #2012e6;">Connectez-vous !</a></div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="titan_assets/js/custom.js"></script>
+
+<div class="footer-section bg-default-4">
+<div class="container">
+<div class="footer-top pt-15 pt-lg-10 pb-lg-19">
+<div class="row">
+<div class="col-md-3">
+<div class="single-footer mb-13 mb-lg-9">
+<img src="https://titan-flyff.fr/titan_assets/image/logo.png" style="width: 175px;" />
+<p class="footer-title gr-text-11 mb-7">
+Rejoignez nous
+</p>
+</div>
+</div>
+<div class="col-3">
+<div class="single-footer mb-13 mb-lg-9">
+<p class="footer-title gr-text-11 mb-7">Navigation</p>
+<ul class="footer-list list-unstyled">
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="/">Accueil</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="register">Inscription</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="downloads">Télécharger</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="vote">Vote</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="donate">Donate</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="">Discord</a></li>
+</ul>
+</div>
+</div>
+<div class="col-3">
+<div class="single-footer mb-13 mb-lg-9">
+<p class="footer-title gr-text-11 mb-7">Classement</p>
+<ul class="footer-list list-unstyled">
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="rankings">Personnages</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="guildranking">Guildes</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="guildwar-rankings">Guildes siege</a></li>
+</ul>
+</div>
+</div>
+<div class="col-3">
+<div class="single-footer mb-13 mb-lg-9">
+<p class="footer-title gr-text-11 mb-7">Legal</p>
+<ul class="footer-list list-unstyled">
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="privacy">Privacy Policy</a></li>
+<li class="py-2"><a class="gr-text-9 gr-text-color" href="terms">Terms & Conditions</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="copyright-area border-top pt-9 pb-8">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<p class="copyright-text gr-text-11 mb-6 mb-lg-0 gr-text-color text-center text-lg-left">
+© 2021 Copyright, All Right Reserved, Made by ᴍᴀʀᴠɪɴ (つ•̀ᴥ•́)つ#3846
+</p>
+</div>
+<div class="col-lg-6 text-center text-lg-right">
+<ul class="social-icons list-unstyled mb-0 mr-n9">
+<li class="gr-text-7"><a href="" class="gr-text-color-opacity mr-9"><i class="icon icon-logo-twitter"></i></a></li>
+<li class="gr-text-7"><a href="" class="gr-text-color-opacity mr-9"><i class="icon icon-logo-facebook"></i></a></li>
+<li class="gr-text-7"><a href="" class="gr-text-color-opacity mr-9"><i class="icon icon-instant-camera-2"></i></a></li>
+<li class="gr-text-7"><a href="" class="gr-text-color-opacity mr-9"><i class="icon icon-logo-linkedin"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="titan_assets/js/vendor.min.js"></script>
+
+<script src="titan_assets/plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="titan_assets/plugins/nice-select/jquery.nice-select.min.js"></script>
+<script src="titan_assets/plugins/aos/aos.min.js"></script>
+<script src="titan_assets/plugins/slick/slick.min.js"></script>
+<script src="titan_assets/plugins/date-picker/js/gijgo.min.js"></script>
+<script src="titan_assets/plugins/counter-up/jquery.waypoints.min.js"></script>
+<script src="titan_assets/plugins/counter-up/jquery.counterup.min.js"></script>
+<script src="titan_assets/plugins/theme-mode-switcher/gr-theme-mode-switcher.js"></script>
+
+<script src="titan_assets/js/customTheme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="titan_assets/js/custom.js"></script>
+<script>
+var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
+</script>
+</body>
+</html>
